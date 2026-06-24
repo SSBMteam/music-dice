@@ -1,0 +1,177 @@
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+*:not(dialog) {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Increase line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+/* START OF PROJECT */
+
+html {
+    font-size: 16px;
+    zoom: 1;
+}
+
+h1 {
+    margin-bottom: 0px;
+}
+
+h2 {
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.4;
+    background: #f4f4f4;
+    margin: 0;
+
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+.page {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    text-align: center;
+    width: 350px;
+
+    display: flex;
+    flex-direction: column;
+
+    height: 65vh;
+}
+
+@keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+#noteDisplay {
+  transition: transform 0.05s ease, opacity 0.05s ease;
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 3px 0;
+    color: #2c3e50;
+}
+
+button {
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    margin: 4px;
+}
+
+#rollBtn {
+    background: #3498db;
+}
+
+#rollBtn:hover {
+    background: #2980b9;
+}
+
+#resetBtn {
+    background: #e74c3c;
+}
+
+#resetBtn:hover {
+    background: #c0392b;
+}
+
+button:hover {
+    background: #2980b9;
+}
+
+#history {
+    list-style: decimal;
+    list-style-position: inside;
+
+    padding: 0;
+    margin-top: 0.5rem;
+
+    overflow-y: auto;
+    flex: 1;
+    min-height: 0;
+
+    border-top: 1px solid #ddd;
+    scrollbar-gutter: stable;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px 10px;
+
+    align-content: start;
+}
+
+#history li {
+    padding: 4px 6px;
+    font-size: 0.95rem;
+
+    background: #f8f8f8;
+    border-radius: 6px;
+
+    text-align: left;
+}
