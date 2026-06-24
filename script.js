@@ -91,7 +91,7 @@ rollButton.addEventListener("click", () => {
             // Numbered history
             const li = document.createElement("li");
             const number = history.children.length + 1;
-            li.textContent = `${number}. ${finalNote}`;
+            li.textContent = `${finalNote}`;
             history.appendChild(li);
 
             rollButton.disabled = false;
